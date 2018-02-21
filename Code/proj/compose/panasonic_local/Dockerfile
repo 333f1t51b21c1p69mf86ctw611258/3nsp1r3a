@@ -1,0 +1,23 @@
+FROM 671669684513.dkr.ecr.us-west-2.amazonaws.com/docker_briode_core:latest
+
+MAINTAINER enspirea <yono@enspirea.com>
+
+RUN yes | pecl install xdebug-2.5.5 \
+    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.profiler_enable=1" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.profiler_trigger=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.profiler_output_dir=/tmp/" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && wget https://phar.phpunit.de/phpunit.phar \
+    && chmod +x phpunit.phar \
+    && mv phpunit.phar /usr/local/bin/phpunit \
+    && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');" \
+    && chmod -R a+rx /root
+
+    #&& php -r "if (hash_file('SHA384', 'composer-setup.php') === '55d6ead61b29c7bdee5cccfb50076874187bd9f21f65d8991d46ec5cc90518f447387fb9f76ebae1fbbacf329e583e30') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" \
+
+
+#CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]

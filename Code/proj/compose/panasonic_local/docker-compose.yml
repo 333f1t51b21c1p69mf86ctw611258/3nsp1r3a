@@ -1,13 +1,15 @@
- version: '2'
+#  version: '2'
 
- services:
+#  services:
   web:
-   image: 671669684513.dkr.ecr.us-west-2.amazonaws.com/briode_core:latest
+   image: briode_core_debug:latest
    container_name: briode
    expose:
     - 443
+   ports:
+    - "4200:80"
    volumes:
-    - /etc/localtime:/etc/localtime
+    # - /etc/localtime:/etc/localtime
     - ./Generic:/var/www/html/Generic
     - ./htaccess:/var/www/html/.htaccess
     - ./loader:/loader
@@ -28,7 +30,7 @@
    image: redis
    command: redis-server --appendonly yes
    volumes:
-    - /etc/localtime:/etc/localtime
+    # - /etc/localtime:/etc/localtime
     - ./redis:/data
   ldap:
    image: osixia/openldap-backup:1.1.7
@@ -40,7 +42,7 @@
     LDAP_BACKUP_CONFIG_CRON_EXP: '0 5 * * *'
    hostname: briodeldap1.enspirea.com
    volumes:
-    - /etc/localtime:/etc/localtime
+    # - /etc/localtime:/etc/localtime
     - ./backup/ldap:/data/backup
   mysql:
    image: mysql:5.6
@@ -49,8 +51,9 @@
     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     MYSQL_ROOT_PASSWORD:
    volumes:
-    - /etc/localtime:/etc/localtime
+    # - /etc/localtime:/etc/localtime
     - ./mysqlconf:/etc/mysql/conf.d
+    - ./loader:/loader
   tomcat:
    image: 671669684513.dkr.ecr.us-west-2.amazonaws.com/briode_tomcat:latest
    container_name: admin-briode
@@ -67,7 +70,7 @@
     VIRTUAL_PORT: '443'
     VIRTUAL_PROTO: 'https'
    volumes:
-    - /etc/localtime:/etc/localtime
+    # - /etc/localtime:/etc/localtime
     - ./Generic:/var/www/html/Generic
     - ../../certs:/certs
     - ./share/webapps/adminconsoleuib.war:/srv/tomcat/webapps/adminconsoleuib.war
@@ -80,7 +83,7 @@
     - mysql
     - ldap
    volumes:
-    - /etc/localtime:/etc/localtime
+    # - /etc/localtime:/etc/localtime
     - ./Generic:/var/www/html/Generic
     - ./redis:/redis
     - ./backup:/backup

@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
    RewriteEngine on
 
-   RewriteRule    ^(.*)$ https://eval.briode.com/Generic/users/login [L]
+   RewriteRule    ^(.*)$ http://eval.briode.com:4200/Generic/users/login [L]
 </IfModule>
