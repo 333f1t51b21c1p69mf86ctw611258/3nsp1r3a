@@ -1,0 +1,32 @@
+<?php
+App::uses('WorkflowBase', 'Model');
+ 
+class __WORKFLOWMODEL__ extends WorkflowBase {
+    var $useTable = '__WORKFLOWTABLENAME__';
+    public $useDbConfig = 'genericdata';
+
+    public $belongsTo = array(
+        '__DBMODEL__' => array(
+            'className' => '__DBMODEL__',
+            'foreignKey' => 'subject_id'
+        )
+    );
+
+    // TODO: add application specific information
+    private function get_summary($created){
+        return 'No context';
+    }
+
+    public function afterSave($created){
+        parent::afterSave($created);
+        if($created){
+            ClassRegistry::init('WorkflowEventLog')->getEventManager()->dispatch(
+                    $this->createCakeEvent(
+                        'Model.__WORKFLOWMODEL__.afterSave',
+                        '__WORKFLOWMODEL__',
+                        '__PLUGINNAME__',
+                        $this->get_summary($created)
+            ));
+        }
+    } 
+}

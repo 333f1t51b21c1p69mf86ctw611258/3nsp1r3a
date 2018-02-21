@@ -1,0 +1,162 @@
+{
+    "appbase": {
+        "plugin_name": "AppTest",
+        "app_kind": "db",
+        "string_size": "32",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "mainview_col1",
+            "mainview_col2"
+        ],
+        "mainview_sort_columns": [
+            "mainview_col1"
+        ],
+        "mainview_sort_order": [
+            "desc"
+        ],
+        "searchview_columns": [
+            "searchview_col1",
+            "searchview_col2"
+        ],
+        "searchexclude_columns": [
+            "searchview_col3",
+            "searchview_col4"
+        ],
+        "impexp_keys": [
+            "Column1",
+            "Column2"
+        ],
+        "sw_notification": "enable",
+        "notification_email": "enspirea.dev@gmail.com",
+        "notification_url": {
+            "external_baseurl": "https://kwe.briode.com/Generic"
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+            "calc_field1",
+            "calc_field2"
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+            "hidden_field1",
+            "hidden_field2"
+        ],
+        "validation_fields": {
+            "Column1": {
+                "kind": "between",
+                "high_kind": "lower_or_equal",
+                "high_value": "1.00",
+                "low_kind": "higher_or_equal",
+                "low_value": "2.00"
+            },
+            "Column2": {
+                "kind": "lower_or_equal",
+                "value": "1.0"
+            }
+        }
+    },
+    "workflowappbase": {
+        "assignee_at_approve": "reviewer",
+        "report_params": {
+            "columns": [
+                "report_col1",
+                "report_col2"
+            ],
+            "form_from_name": "ts_from",
+            "form_to_name": "ts_to",
+            "filter_column": "Date"
+        },
+        "sw_email": "enable",
+        "sw_excel_imp_exp": "disable",
+        "forward_url": {
+            "external_baseurl" : "https://testsite/testcontroller"
+        },
+        "email_params": {
+            "subject_tag_column": "report_col1"
+        },
+        "notifier_at_approve": {
+            "emails": [
+                "test1@enspirea.com",
+                "test2@enspirea.com"
+            ]
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "create"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op"   : [
+                "all"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "groups": [
+        {
+            "id": "1",
+            "name": "Group1",
+            "manager": "1",
+            "users": [
+                "2",
+                "3"
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Group2",
+            "manager": "4",
+            "users": [
+                "5",
+                "6"
+            ]
+        }
+    ],
+    "layer_users": {
+        "user" : [
+            "2",
+            "3",
+            "5",
+            "6"
+        ],
+        "admin" : [
+            "1",
+            "4"
+        ]
+    },
+    "db_import" : {
+        "tablename" : "attrapptests",
+        "columns" : [
+            "Application_No",
+            "Project",
+            "Purpose",
+            "Date",
+            "State",
+            "Expense",
+            "Asset",
+            "Total"
+        ]
+    },
+    "projectparams": {
+        "conditional_approval_threshold": "0.54"
+    }
+}
+

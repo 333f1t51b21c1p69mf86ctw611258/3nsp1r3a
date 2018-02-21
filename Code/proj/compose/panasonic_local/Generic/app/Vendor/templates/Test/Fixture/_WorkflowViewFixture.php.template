@@ -1,0 +1,12 @@
+<?php
+/**
+ * __WORKFLOWVIEWMODELINFIXTURE__Fixture
+ *
+ */
+class __WORKFLOWVIEWMODELINFIXTURE__Fixture extends CakeTestFixture {
+    public $import = '__PLUGINNAME__.__WORKFLOWVIEWMODEL__';
+/*
+    public $table = 'workflow2s';
+    public $import = array('connection'=>'app2', 'table'=>'workflow2s');
+*/
+}

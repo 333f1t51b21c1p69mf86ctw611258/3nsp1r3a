@@ -1,0 +1,141 @@
+{
+    "appbase": {
+        "plugin_name": "App1",
+        "app_kind": "db",
+        "string_size": "32",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "Name",
+            "Branch",
+            "Year",
+            "Month",
+            "Date_Reported"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "Name",
+            "Branch",
+            "Year",
+            "Month",
+            "Date_Reported"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+            "1_Achievement_Ratio_1",
+            "1_Achievement_Ratio_2",
+            "1_Achievement_Ratio_3",
+            "1_Achievement_Ratio_4",
+            "1_Achievement_Ratio_5",
+            "1_Achievement_Ratio_6",
+            "1_Achievement_Ratio_7",
+            "1_Achievement_Ratio_8",
+            "1_Achievement_Ratio_9",
+            "1_Achievement_Ratio_10"
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "create",
+                "read",
+                "update"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op"   : [
+                "all"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "groups": [
+        {
+            "id": "1",
+            "name": "New Jersey",
+            "manager": [
+                "13"
+            ],
+            "users": [
+                "14",
+                "15"
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Chicago",
+            "manager": [
+                "16"
+            ],
+            "users": [
+                "17",
+                "18",
+                "19"
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Los Angeles",
+            "manager": [
+                "117"
+            ],
+            "users": [
+                "21",
+                "22"
+            ]
+        }
+    ],
+    "layer_users": {
+        "user" : [
+            "13",
+            "14",
+            "15",
+            "17",
+            "18",
+            "19",
+            "21",
+            "22",
+            "117",
+            "125",
+            "126",
+            "127"
+        ],
+        "admin" : [
+            "1",
+            "16",
+            "23"
+        ]
+    }
+}
+

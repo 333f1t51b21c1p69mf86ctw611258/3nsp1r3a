@@ -1,0 +1,33 @@
+#App11: class
+redis-cli hset App11_validate_cssclass_valTrimHeight kind between
+redis-cli hset App11_validate_cssclass_valTrimHeight high_kind lower_or_equal
+redis-cli hset App11_validate_cssclass_valTrimHeight high_value 11.05
+redis-cli hset App11_validate_cssclass_valTrimHeight low_kind higher_or_equal
+redis-cli hset App11_validate_cssclass_valTrimHeight low_value 10.65
+
+redis-cli hset App11_validate_cssclass_valHeight kind between
+redis-cli hset App11_validate_cssclass_valHeight high_kind lower_or_equal
+redis-cli hset App11_validate_cssclass_valHeight high_value 4.55
+redis-cli hset App11_validate_cssclass_valHeight low_kind higher_or_equal
+redis-cli hset App11_validate_cssclass_valHeight low_value 4.05
+
+redis-cli hset App11_validate_cssclass_valRunout kind lower_or_equal
+redis-cli hset App11_validate_cssclass_valRunout value 0.1
+
+redis-cli hset App11_validate_cssclass_valID kind between
+redis-cli hset App11_validate_cssclass_valID high_kind lower_or_equal
+redis-cli hset App11_validate_cssclass_valID high_value 57.6
+redis-cli hset App11_validate_cssclass_valID low_kind higher_or_equal
+redis-cli hset App11_validate_cssclass_valID low_value 57.55
+
+redis-cli hset App11_validate_cssclass_valOD kind between
+redis-cli hset App11_validate_cssclass_valOD high_kind lower_or_equal
+redis-cli hset App11_validate_cssclass_valOD high_value 141.9
+redis-cli hset App11_validate_cssclass_valOD low_kind higher_or_equal
+redis-cli hset App11_validate_cssclass_valOD low_value 141.5
+
+redis-cli hset App11_validate_cssclass_valOverallHeight kind between
+redis-cli hset App11_validate_cssclass_valOverallHeight high_kind lower_or_equal
+redis-cli hset App11_validate_cssclass_valOverallHeight high_value 5.30
+redis-cli hset App11_validate_cssclass_valOverallHeight low_kind higher_or_equal
+redis-cli hset App11_validate_cssclass_valOverallHeight low_value 5.20

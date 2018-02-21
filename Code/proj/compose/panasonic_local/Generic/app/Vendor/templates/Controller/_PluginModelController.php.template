@@ -1,0 +1,64 @@
+<?php
+App::uses('AppController', 'Controller');
+App::uses('__PLUGINNAME__BaseController', '__PLUGINNAME__.Controller');
+App::uses('Sanitize', 'Utility');
+
+class __DBMODELINFIXTURE__sController extends __PLUGINNAME__BaseController {
+
+    protected $paginate = array(
+        'limit' => 100,
+        'order' => array('id' => 'desc')
+    );
+
+    public $uses = array(
+            '__PLUGINNAME__.__DBMODEL__',
+            /* __ADD_MODELS_HERE__ */
+    );
+    public $components = array('Search.Prg','Paginator','ConfigService');
+ 
+    public function isAuthorized($user=null) {
+        return true;
+    }
+
+    public function beforeFilter(){
+        $this->setConfigFromDict('__PLUGINNAME__');
+        parent::beforeFilter();
+    }
+
+    public function index() {
+        $this->Prg->commonProcess();
+        $assoc_conditions['OR'] = array( $this->__DBMODEL__->parseCriteria($this->passedArgs) );
+        foreach( $this->__DBMODEL__->assocModelNames as $modelName ){
+            $modelToEval = eval('return $this->'.$modelName.';');
+            $assoc_cond_add = array($modelToEval->parseCriteria($this->passedArgs));
+            array_push($assoc_conditions['OR'], $assoc_cond_add);
+            #$this->log('---index---', 'debug');
+            #$this->log($assoc_conditions, 'debug');
+        }
+        $exclude_cols = $this->ConfigService->get_app_searchexclude_columns(
+                                                    $this->pluginName);
+
+        //$new_conditions = $assoc_conditions;
+        foreach ($assoc_conditions['OR'] as $cond_lists) {
+            if (!isset($cond_lists['OR'])) continue;
+            foreach ($cond_lists['OR'] as $cond_key=>$cond_val) {
+                foreach ($exclude_cols as $e) {
+                    if (strpos($cond_key, $e)!==FALSE) {
+                        $this->log('cond_key to remove:'.$cond_key, 'debug');
+                        unset($assoc_conditions['OR'][0]['OR'][$cond_key]);
+                    }
+                }
+            }
+        }
+        // $this->log($assoc_conditions['OR'], 'debug');
+
+        $this->paginate['conditions'] = $assoc_conditions;
+        $this->Paginator->settings = $this->paginate;
+        $this->set('pluginName', $this->pluginName);
+        $this->set('pluginModelName', $this->pluginModelName);
+        $this->set('attrs', $this->ConfigService->get_app_searchview_list(
+                                                    $this->pluginName));
+        $this->set('searchres', $this->Paginator->paginate($this->pluginModelName));
+    }
+}
+?>

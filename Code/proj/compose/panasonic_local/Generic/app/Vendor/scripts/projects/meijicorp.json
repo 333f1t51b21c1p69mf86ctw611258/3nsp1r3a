@@ -1,0 +1,31 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App26" : {
+                "list" : "Timesheet Summary",
+                "navbar" : "Timesheet Summary"
+            },
+            "App24" : {
+                "list" : "Timesheet",
+                "navbar" : "Timesheet"
+            },
+            "App25" : {
+                "list" : "Target Setting",
+                "navbar" : "Target Setting"
+            },
+            "App27" : {
+                "list" : "Holiday Setting",
+                "navbar" : "Holiday Setting"
+            },
+            "App28" : {
+                "list" : "Handler Setting",
+                "navbar" : "Handler Setting"
+            }
+        },
+        "initial_plugin": "App26",
+        "ext_base_url": "http://remote.enspirea.com:8990",
+        "int_base_url": "http://192.168.1.22",
+        "post_script" : "projects/postsetup_meijicorp.sh"
+    },
+    "projectparams": {}
+}

@@ -1,0 +1,15 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App19" : {
+                "list" : "Expense Report",
+                "navbar" : "Expense Report"
+            }
+        },
+        "initial_plugin": "App19",
+        "ext_base_url": "https://okaya.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

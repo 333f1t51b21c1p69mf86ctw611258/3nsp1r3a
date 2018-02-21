@@ -1,0 +1,17 @@
+<?php
+App::uses('AppController', 'Controller');
+App::uses('__PLUGINNAME__BaseController', '__PLUGINNAME__.Controller');
+App::uses('Sanitize', 'Utility');
+
+class __PLUGINNAME__Controller extends __PLUGINNAME__BaseController {
+    
+    public function isAuthorized($user=null) {
+        return parent::isAuthorized($user);
+    }
+
+    public function beforeFilter() {
+        $this->setConfigFromDict('__PLUGINNAME__');
+        parent::beforeFilter();
+    }
+}
+?>

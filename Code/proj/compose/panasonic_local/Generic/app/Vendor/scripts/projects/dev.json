@@ -1,0 +1,167 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App1" : {
+                "list" : "Nori Monthly Report(App1)",
+                "navbar" : "Monthly Report"
+            },
+            "App2" : {
+                "list" : "Pana Win-Win(App2)",
+                "navbar" : "Win-Win"
+            },
+            "App3" : {
+                "list" : "AW Test(App3)",
+                "navbar" : "Customer Countermeasure"
+            },
+            "App4" : {
+                "list" : "AW Test(App4)",
+                "navbar" : "Daily Audit"
+            },
+            "App5" : {
+                "list" : "AW Test(App5)",
+                "navbar" : "Ringi"
+            },
+            "App6" : {
+                "list" : "AW Test(App6)",
+                "navbar" : "Inventory"
+            },
+            "App7" : {
+                "list" : "AW Test(App7)",
+                "navbar" : "Internal Countermeasure"
+            },
+            "App8" : {
+                "list" : "AW Test(App8)",
+                "navbar" : "Deviation"
+            },
+            "App9" : {
+                "list" : "Nori Inst. Exp(App9)",
+                "navbar" : "Installation Experience"
+            },
+            "App10" : {
+                "list" : "AW Test(App10)",
+                "navbar" : "Inventory Check"
+            },
+            "App11" : {
+                "list" : "AW TEst(App11)",
+                "navbar" : "Daily Audit(2)"
+            },
+            "App12" : {
+                "list" : "AW Test(App12)",
+                "navbar" : "None"
+            },
+            "App13" : {
+                "list" : "AW Test(App13)",
+                "navbar" : "None"
+            },
+            "App14" : {
+                "list" : "Ens Expense Report(App14)",
+                "navbar" : "Expense Report"
+            },
+            "App15" : {
+                "list" : "Demo Function(App15)",
+                "navbar" : "Function"
+            },
+            "App16" : {
+                "list" : "Demo Ringi(App16)",
+                "navbar" : "Ringi"
+            },
+            "App17" : {
+                "list" : "Demo Check Sheet(App17)",
+                "navbar" : "Check Sheet"
+            },
+            "App18" : {
+                "list" : "Demo Customer Information(App18)",
+                "navbar" : "Customer Information"
+            },
+            "App19" : {
+                "list" : "Demo Expense Report(App19)",
+                "navbar" : "Expense Report"
+            },
+            "App20" : {
+                "list" : "Ens ITA PR(App20)",
+                "navbar" : "ITA PR"
+            },
+            "App21" : {
+                "list" : "Demo Validation(App21)",
+                "navbar" : "Validation"
+            },
+            "App22" : {
+                "list" : "TM Maintenance(App22)",
+                "navbar" : "Maintenance"
+            },
+            "App23" : {
+                "list" : "TM Know-how(App23)",
+                "navbar" : "Know-how"
+            },
+            "App24" : {
+                "list" : "Me Timesheet(App24)",
+                "navbar" : "Timesheet"
+            },
+            "App25" : {
+                "list" : "Me Target Setting(App25)",
+                "navbar" : "Target Setting"
+            },
+            "App26" : {
+                "list" : "Me Timesheet Summary(App26)",
+                "navbar" : "Timesheet Summary"
+            },
+            "App27" : {
+                "list" : "Me Holiday Setting(App27)",
+                "navbar" : "Holiday Setting"
+            },
+            "App28" : {
+                "list" : "Me Handler Setting(App28)",
+                "navbar" : "Handler Setting"
+            },
+            "App29" : {
+                "list" : "Test1(App29)",
+                "navbar" : "Test1"
+            },
+            "App30" : {
+                "list" : "Test2(App30)",
+                "navbar" : "Test2"
+            },
+            "App31" : {
+                "list" : "Test3(App31)",
+                "navbar" : "Test3"
+            },
+            "App32" : {
+                "list" : "Pana Price List(App32)",
+                "navbar" : "Price List"
+            },
+            "App33" : {
+                "list" : "UNU Expense Free Categories(App33)",
+                "navbar" : "Expense Free Categories"
+            },
+            "App34" : {
+                "list" : "Matsu Expense Fixed Categories(App34)",
+                "navbar" : "Expense Fixed Categories"
+            },
+            "App35" : {
+                "list" : "UNU Categories(App35)",
+                "navbar" : "Categories"
+            },
+            "App36" : {
+                "list" : "Cci Form(App36)",
+                "navbar" : "Form"
+            },
+            "App37" : {
+                "list" : "Cci Form Approval(App37)",
+                "navbar" : "Form Approval"
+            },
+            "App38" : {
+                "list" : "Kin Trace Sheet(App38)",
+                "navbar" : "Trace Sheet"
+            },
+            "App39" : {
+                "list" : "Nori Marketing Report(App39)",
+                "navbar" : "Marketing Report"
+            }
+        },
+        "initial_plugin": "App39",
+        "ext_base_url": "http://remote.enspirea.com:8089",
+        "int_base_url": "http://192.168.1.8:8080",
+        "post_script" : "projects/postsetup_dev.sh"
+    },
+    "projectparams": {}
+}

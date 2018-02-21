@@ -1,0 +1,21 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App2" : {
+                "list" : "Win-Win",
+                "navbar" : "Win-Win"
+            },
+            "App32" : {
+                "list" : "Price List",
+                "navbar" : "Price List"
+            }
+        },
+        "initial_plugin": "App2",
+        "ext_base_url": "https://admin-panasonic-local.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {
+        "conditional_approval_threshold": "0.54"
+    }
+}

@@ -1,0 +1,86 @@
+ version: '2'
+
+ services:
+  web:
+   image: 671669684513.dkr.ecr.us-west-2.amazonaws.com/briode_core:latest
+   container_name: briode
+   expose:
+    - 443
+   volumes:
+    - /etc/localtime:/etc/localtime
+    - ./Generic:/var/www/html/Generic
+    - ./htaccess:/var/www/html/.htaccess
+    - ./loader:/loader
+    - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    - ./share/App2/attachments:/var/www/html/Generic/app/Plugin/App2/attachments
+    - ./share/App2/uploads:/var/www/html/Generic/app/Plugin/App2/uploads
+    - ./share/App32/attachments:/var/www/html/Generic/app/Plugin/App32/attachments
+    - ./share/App32/uploads:/var/www/html/Generic/app/Plugin/App32/uploads
+   links:
+    - redis
+    - mysql
+    - ldap
+    - tomcat
+   environment:
+    CAKEPHP_WEBROOT: /var/www/html
+    VIRTUAL_HOST: eval.briode.com
+  redis:
+   image: redis
+   command: redis-server --appendonly yes
+   volumes:
+    - /etc/localtime:/etc/localtime
+    - ./redis:/data
+  ldap:
+   image: osixia/openldap-backup:1.1.7
+   environment:
+    LDAP_ORGANISATION: My Company
+    LDAP_DOMAIN: enspirea.com
+    LDAP_ADMIN_PASSWORD: briodeRocks
+    LDAP_CONFIG_PASSWORD: secret
+    LDAP_BACKUP_CONFIG_CRON_EXP: '0 5 * * *'
+   hostname: briodeldap1.enspirea.com
+   volumes:
+    - /etc/localtime:/etc/localtime
+    - ./backup/ldap:/data/backup
+  mysql:
+   image: mysql:5.6
+   mem_limit: 720m 
+   environment:
+    MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    MYSQL_ROOT_PASSWORD:
+   volumes:
+    - /etc/localtime:/etc/localtime
+    - ./mysqlconf:/etc/mysql/conf.d
+  tomcat:
+   image: 671669684513.dkr.ecr.us-west-2.amazonaws.com/briode_tomcat:latest
+   container_name: admin-briode
+   expose:
+    - 443
+   links:
+    - redis
+    - mysql
+    - ssh
+   environment:
+    TOMCAT_MAJOR_VERSION: '8'
+    TOMCAT_MINOR_VERSION: '8.0.11'
+    VIRTUAL_HOST: admin-eval.briode.com
+    VIRTUAL_PORT: '443'
+    VIRTUAL_PROTO: 'https'
+   volumes:
+    - /etc/localtime:/etc/localtime
+    - ./Generic:/var/www/html/Generic
+    - ../../certs:/certs
+    - ./share/webapps/adminconsoleuib.war:/srv/tomcat/webapps/adminconsoleuib.war
+  ssh:
+   image: 671669684513.dkr.ecr.us-west-2.amazonaws.com/briode_ssh:latest
+   expose:
+    - 22
+   links:
+    - redis
+    - mysql
+    - ldap
+   volumes:
+    - /etc/localtime:/etc/localtime
+    - ./Generic:/var/www/html/Generic
+    - ./redis:/redis
+    - ./backup:/backup

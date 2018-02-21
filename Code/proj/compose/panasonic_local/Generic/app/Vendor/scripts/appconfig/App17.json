@@ -1,0 +1,93 @@
+{
+    "appbase": {
+        "plugin_name": "App17",
+        "app_kind": "db",
+        "string_size": "1024",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "creator_id",
+            "created_at",
+            "Topmenu",
+            "Webtabmenu",
+            "UploadExcel",
+            "Account1",
+            "Account2",
+            "Account3",
+            "ProfilePicture"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "creator_id",
+            "created_at",
+            "Topmenu",
+            "Webtabmenu",
+            "UploadExcel",
+            "Account1",
+            "Account2",
+            "Account3",
+            "ProfilePicture"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "acl",
+        "sw_report": "enable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op" : [
+                "all"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        "admin" : [
+            "1",
+            "24",
+            "25"
+        ]
+    }
+}

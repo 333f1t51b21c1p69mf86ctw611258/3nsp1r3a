@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>QUnit basic example</title>
+</head>
+
+<body>
+    <script src="jquery-1.8.3.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="qunit-1.12.0.js"></script>
+    <link rel="stylesheet" href="../css/jquery-ui.css" type="text/css"></link>
+    <script src="DbConfig.js"></script>
+
+    <table border=1>
+        <tr>
+            <td class="editDBConfig">
+                input:column1:string:colid:colclass
+            </td>
+            <td class="editDbConfig">
+                input:column2:string:colid:colclass
+            </td>
+        </tr>
+    </table>
+    <div id="myDialog" class='menu' title="Edit DB column name">
+        <p>Enter the column name:</p>
+        <input id="inputColumn" type="text" name="fieldname">
+        <p>Specify data type</p>
+        <select id="inputType">
+            <option value="Text">Text</option>
+            <option value="Date">Date</option>
+            <option value="Text">Static label</option>
+            <!-- <option class="ui-state-disabled" value="Dropdown">Dropdown</option> -->            
+        </select>
+        <p>Specify CSS class (optional, same as column name by default)</p>
+        <input id="inputCSSID" type="text" name="fieldcssid">
+        <p>Specify CSS class(optional, none by default)</p>
+        <input id="inputCSSClass" type="text" name="fieldcssclass">
+    </div>
+</body>
+</html>

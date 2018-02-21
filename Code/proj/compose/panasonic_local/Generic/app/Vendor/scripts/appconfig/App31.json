@@ -1,0 +1,153 @@
+{
+    "appbase": {
+        "plugin_name": "App31",
+        "app_kind": "workflow",
+        "string_size": "1024",
+        "main_page": "list_waiting_for_your_action",
+        "mainview_columns": [
+            "subject_id",
+            "created_at",
+            "creator_id",
+            "summary",
+            "assignee"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "created_at",
+            "creator_id"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "acl",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "workflowappbase": {
+        "assignee_at_approve": "",
+        "report_params": {},
+        "sw_email": "enable",
+        "sw_excel_imp_exp": "enable",
+        "forward_url": {
+            "external": "http://remote.enspirea.com:8888/Generic/users/login",
+            "internal": "http://192.168.1.8/Generic/users/login"
+        },
+        "email_params": {},
+        "notifier_at_approve": {
+            "emails": []
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "read"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op" : [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        },
+        {
+            "name" : "approve",
+            "op" : "delete"
+        },
+        {
+            "name" : "cancel",
+            "op" : "delete"
+        },
+        {
+            "name" : "update",
+            "op" : "update"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "37",
+            "38",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86"
+        ],
+        "admin" : [
+            "1",
+            "39",
+            "40"
+        ]
+    }
+}

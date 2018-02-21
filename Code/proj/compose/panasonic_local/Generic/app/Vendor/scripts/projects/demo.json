@@ -1,0 +1,35 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App14" : {
+                "list" : "Expense",
+                "navbar" : "Expense"
+            },
+            "App15" : {
+                "list" : "Function",
+                "navbar" : "Function"
+            },
+            "App16" : {
+                "list" : "Ringi",
+                "navbar" : "Ringi"
+            },
+            "App17" : {
+                "list" : "Check Sheet",
+                "navbar" : "Check Sheet"
+            },
+            "App18" : {
+                "list" : "Customer Information",
+                "navbar" : "Customer Information"
+            },
+            "App21" : {
+                "list" : "Validation",
+                "navbar" : "Validation"
+            }
+        },
+        "initial_plugin": "App16",
+        "ext_base_url": "https://admin-demo.briode.com",
+        "int_base_url": "https://admin-demo.briode.com",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

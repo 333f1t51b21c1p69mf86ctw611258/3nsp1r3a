@@ -1,0 +1,23 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App29" : {
+                "list" : "Test1",
+                "navbar" : "Test1"
+            },
+            "App30" : {
+                "list" : "Test2",
+                "navbar" : "Test2"
+            },
+            "App31" : {
+                "list" : "Test3",
+                "navbar" : "Test3"
+            }
+        },
+        "initial_plugin": "App29",
+        "ext_base_url": "",
+        "int_base_url": "",
+        "post_script" : "projects/postsetup_meijimigration.sh"
+    },
+    "projectparams": {}
+}

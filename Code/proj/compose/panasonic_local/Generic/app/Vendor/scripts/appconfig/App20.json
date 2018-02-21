@@ -1,0 +1,116 @@
+{
+    "appbase": {
+        "plugin_name": "App20",
+        "app_kind": "db",
+        "string_size": "256",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "Customer_name",
+            "Detail",
+            "Fee",
+            "Quotation_date",
+            "Invoice_date",
+            "PO",
+            "Payment_date",
+            "Status"
+        ],
+        "mainview_sort_columns": [
+            "Payment_date",
+            "Payment_date",
+            "Invoice_date",
+            "Quotation_date",
+            "Fee"
+        ],
+        "mainview_sort_order": [
+            "IS_NULL_DESC",
+            "desc",
+            "desc",
+            "desc",
+            "desc"
+        ],
+        "searchview_columns": [
+            "id",
+            "Customer_name",
+            "Detail",
+            "Fee",
+            "Quotation_date",
+            "Invoice_date",
+            "PO",
+            "Payment_date",
+            "Status"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "read"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op" : [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "33",
+            "2"
+        ],
+        "admin" : [
+            "1",
+            "24",
+            "25"
+        ]
+    },
+    "db_import" : {
+        "tablename" : "attrapp20s",
+        "columns" : [
+            "Customer_name",
+            "Detail",
+            "Fee",
+            "Quotation_date",
+            "Quote_No",
+            "Invoice_date",
+            "Inv_No",
+            "PO",
+            "Payment_date",
+            "Status"
+        ]
+    }
+}

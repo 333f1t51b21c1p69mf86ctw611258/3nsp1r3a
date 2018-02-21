@@ -1,0 +1,8 @@
+<?php
+App::uses('__CONTROLLERBASE__Controller', 'Controller');
+
+class __PLUGINNAME__BaseController extends __CONTROLLERBASE__Controller {
+    public function beforeFilter() {
+        parent::beforeFilter();
+    }
+}

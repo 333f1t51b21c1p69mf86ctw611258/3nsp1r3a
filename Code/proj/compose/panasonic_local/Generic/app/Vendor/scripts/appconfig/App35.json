@@ -1,0 +1,94 @@
+{
+    "appbase": {
+        "plugin_name": "App35",
+        "app_kind": "db",
+        "string_size": "1024",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "category",
+            "GL_Number"
+        ],
+        "mainview_sort_columns": [
+            "id"
+        ],
+        "mainview_sort_order": [
+            "desc"
+        ],
+        "searchview_columns": [
+            "id",
+            "category",
+            "GL_Number"
+        ],
+        "impexp_keys": [
+            "category"
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "enable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "read"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op" : [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        },
+        {
+            "name" : "import_excel",
+            "op" : "update"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "118",
+            "119",
+            "120",
+            "122"
+        ],
+        "admin" : [
+            "1",
+            "121"
+        ]
+    },
+    "db_import" : {
+        "tablename" : "attrapp35s",
+        "columns" : [
+            "category",
+            "GL_Number"
+        ]
+    }
+}

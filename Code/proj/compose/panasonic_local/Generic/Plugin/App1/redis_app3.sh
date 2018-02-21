@@ -1,0 +1,1 @@
+/var/lib/jenkins/git/Generic/app/Vendor/scripts/./redis_app3.sh

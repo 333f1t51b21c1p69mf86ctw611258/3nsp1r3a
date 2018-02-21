@@ -1,0 +1,130 @@
+{
+    "appbase": {
+        "plugin_name": "App32",
+        "app_kind": "db",
+        "string_size": "1024",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "Row_Labels",
+            "List_Price",
+            "Accessory_Cost_1",
+            "Accessory_Cost_2",
+            "FOB_Japan",
+            "Landed_Cost"
+        ],
+        "mainview_sort_columns": [
+            "id"
+        ],
+        "mainview_sort_order": [
+            "desc"
+        ],
+        "searchview_columns": [
+            "id",
+            "Row_Labels",
+            "List_Price",
+            "Accessory_Cost_1",
+            "Accessory_Cost_2",
+            "FOB_Japan",
+            "Landed_Cost"
+        ],
+        "impexp_keys": [
+            "Row_Labels"
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "create",
+                "read"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "manager",
+            "op" : [
+                "create",
+                "read",
+                "update"
+            ]
+        },
+        {
+            "parent" : "manager",
+            "name" : "controller",
+            "op" : [
+                "create",
+                "read",
+                "update"
+            ]
+        },
+        {
+            "parent" : "controller",
+            "name" : "approver",
+            "op" : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "approver",
+            "name" : "admin",
+            "op" : [
+                "all"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        },
+        {
+            "name" : "import_excel",
+            "op" : "update"
+        }
+    ],
+    "layer_users" : {
+        "controller" : [
+        ],
+        "approver" : [
+        ],
+        "admin" : [
+            "137",
+            "107",
+            "1",
+            "129",
+            "105"
+        ]
+    },
+    "db_import" : {
+        "tablename" : "attrapp32s",
+        "columns" : [
+            "Row_Labels",
+            "List_Price",
+            "Accessory_Cost_1",
+            "Accessory_Cost_2",
+            "FOB_Japan",
+            "Landed_Cost"
+        ]
+    }
+}

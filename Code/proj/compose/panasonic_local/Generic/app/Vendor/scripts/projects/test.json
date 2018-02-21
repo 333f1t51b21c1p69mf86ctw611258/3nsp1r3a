@@ -1,0 +1,19 @@
+{
+    "projectbase" : {
+        "plugins" : {
+            "App2" : {
+                "list" : "Win-Win",
+                "navbar" : "Win-Win"
+            },
+            "App32" : {
+                "list" : "Price List",
+                "navbar" : "Price List"
+            }
+        },
+        "initial_plugin": "App2",
+        "ext_base_url": "https://panasonic.briode.com",
+        "int_base_url": "",
+        "post_script" : "projects/postsetup_test.sh"
+    },
+    "projectparams": {}
+}

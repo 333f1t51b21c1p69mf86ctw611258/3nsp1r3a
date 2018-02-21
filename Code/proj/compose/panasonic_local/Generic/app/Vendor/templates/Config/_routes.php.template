@@ -1,0 +1,6 @@
+<?php
+// uncomment at mainteannce
+Router::parseExtensions('json');
+
+    Router::connect('/__PLUGINNAME__/:action/*', array('plugin'=>'__PLUGINNAME__', 'controller' => '__PLUGINNAME__'));
+

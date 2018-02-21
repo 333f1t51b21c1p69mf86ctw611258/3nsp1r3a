@@ -1,0 +1,166 @@
+{
+    "appbase": {
+        "plugin_name": "App48",
+        "app_kind": "workflow",
+        "string_size": "256",
+        "main_page": "list_waiting_for_your_action",
+        "mainview_columns": [
+            "subject_id",
+            "created_at",
+            "creator_id",
+            "summary",
+            "assignee",
+            "status"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "created_at",
+            "creator_id",
+            "status"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "acl",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "workflowappbase": {
+        "assignee_at_approve": "",
+        "report_params": {
+            "columns": [
+                "id"
+            ],
+            "form_from_name": "ts_from",
+            "form_to_name": "ts_to",
+            "filter_column": "create_at"
+        },
+        "sw_email": "enable",
+        "sw_excel_imp_exp": "disable",
+        "forward_url": {
+            "external_baseurl": "https://hokuto_local.briode.com/Generic"
+        },
+        "email_params": {
+            "subject_tag_column": ""
+        },
+        "notifier_at_approve": {
+            "emails": [
+            ]
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "read"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "manager",
+            "op" : [
+                "create",
+                "read",
+                "update"
+            ]
+        },
+        {
+            "parent" : "manager",
+            "name" : "controller",
+            "op" : [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        {
+            "parent" : "controller",
+            "name" : "approver",
+            "op" : [
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        {
+            "parent" : "approver",
+            "name" : "admin",
+            "op" : [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "delete"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        },
+        {
+            "name" : "approve",
+            "op" : "delete"
+        },
+        {
+            "name" : "cancel",
+            "op" : "update"
+        },
+        {
+            "name" : "update",
+            "op" : "update"
+        },
+        {
+            "name" : "review",
+            "op" : "create"
+        },
+        {
+            "name" : "export_with_filter",
+            "op" : "delete"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "2"
+        ],
+        "manager" : [
+            "3"
+        ],
+        "controller" : [
+            "4"
+        ],
+        "approver" : [
+        ],
+        "admin" : [
+            "1"
+        ]
+    },
+    "post_action_groups" : {
+    },
+    "create_as_groups" : {
+    },
+    "approve_op_as_groups" : {
+    }
+}
+

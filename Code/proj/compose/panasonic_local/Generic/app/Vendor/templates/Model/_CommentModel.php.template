@@ -1,0 +1,7 @@
+<?php
+App::uses('CommentBase', 'Model');
+ 
+class __COMMENTMODEL__ extends CommentBase {
+    var $useTable = '__COMMENTTABLENAME__';
+    public $useDbConfig = 'genericdata';
+}

@@ -1,0 +1,9 @@
+{
+    "config": {
+        "vendor-dir": "../Vendor"
+    },
+    "require": {
+        "aws/aws-sdk-php": "3.*",
+        "predis/predis": "1.1.*@dev"
+    }
+}

@@ -1,0 +1,7 @@
+<?php
+App::uses('WorkflowBase', 'Model');
+ 
+class __WORKFLOWVIEWMODEL__ extends WorkflowBase {
+    var $useTable = '__WORKFLOWVIEWTABLENAME__';
+    public $useDbConfig = 'genericdata';
+}

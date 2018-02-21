@@ -1,0 +1,23 @@
+#! /bin/bash
+
+PLUGIN_NAME='App32'
+APP_KIND='db'
+STRING_SIZE=1024
+MAIN_PAGE='main_menu'
+./redis_create_app.sh $PLUGIN_NAME $APP_KIND $STRING_SIZE $MAIN_PAGE
+
+MAINVIEW_COLUMNS='id Row_Labels List_Price Accessory_Cost_1 Accessory_Cost_2 FOB_Japan Landed_Cost'
+./redis_config_mainview.sh $PLUGIN_NAME "$MAINVIEW_COLUMNS" "id" "desc"
+./redis_config_searchview.sh $PLUGIN_NAME "$MAINVIEW_COLUMNS"
+./redis_config_notification.sh $PLUGIN_NAME 'disable'
+
+# Visibility
+./redis_config_db_visibility.sh $PLUGIN_NAME 'readable_by_all'
+
+# Report
+./redis_config_report.sh $PLUGIN_NAME 'disable'
+
+# Import/Export keys
+IMPEXP_KEYS='Row_Labels'
+./redis_impexp_keys.sh $PLUGIN_NAME "$IMPEXP_KEYS"
+

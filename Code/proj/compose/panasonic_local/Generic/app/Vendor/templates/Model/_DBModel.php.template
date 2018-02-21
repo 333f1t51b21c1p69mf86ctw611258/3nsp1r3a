@@ -1,0 +1,75 @@
+<?php
+App::uses('DbAttrBase', 'Model');
+
+class __DBMODEL__ extends DbAttrBase{
+    var $useTable = '__DBTABLENAME__';
+    public $useDbConfig = 'genericdata';
+
+    __WORKFLOWONLYBEGIN__
+    public $hasOne = array(
+        '__WORKFLOWMODEL__' => array(
+            'className' => '__WORKFLOWMODEL__',
+            'foreignKey' => 'subject_id',
+        )
+    );
+    __WORKFLOWONLYEND__
+
+    public $actsAs = array('Search.Searchable');
+
+    public $filterArgs = array(
+        array(  'name' => 'keywords',
+                'type' => 'query',
+                'method' => 'filterKeyword'),
+    );
+
+    public function filterKeyword($data, $field = null){
+        if (empty($data['keywords'])) {
+            return array();
+        }
+        $this->assocModelNames = array();
+        if( !empty($this->hasMany) ){
+            // FIXME
+            // limit the number of table to three for better performance
+            $maxTablesToJoin = 3;
+            foreach( array_keys($this->hasMany) as $tableToAdd ){
+                array_push($this->assocModelNames, $tableToAdd);
+                if( $maxTablesToJoin-- == 0 ) break;
+            }
+        };
+        $this->log('filterKeyword::', 'debug');
+        $this->log($this->assocModelNames, 'debug');
+
+        return $this->get_filter_condition($data, $data['keywords']);
+    }
+
+    public function beforeSave($options=array()){
+        $diff = $this->get_diff();
+        if( isset($diff) ){
+            ClassRegistry::init('AttributeEventLog')->getEventManager()->dispatch(
+                    $this->createCakeEvent(
+                        'Model.__DBMODEL__.beforeSave', 
+                        '__DBMODEL__',
+                        '__PLUGINNAME__',
+                        $diff
+            ));
+        }
+        return true;
+    }
+
+    // TODO: add application specific information
+    private function get_additional_text($created){
+        return 'saved';
+    }
+
+    public function afterSave($created){
+        if($created){
+            ClassRegistry::init('AttributeEventLog')->getEventManager()->dispatch(
+                    $this->createCakeEvent(
+                        'Model.__DBMODEL__.afterSave', 
+                        '__DBMODEL__',
+                        '__PLUGINNAME__',
+                        $this->get_additional_text($created)
+            ));
+        }
+    }
+}

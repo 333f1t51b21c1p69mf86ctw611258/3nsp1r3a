@@ -1,0 +1,19 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App14" : {
+                "list" : "Expense Report",
+                "navbar" : "Expense Report"
+            },
+            "App20" : {
+                "list" : "ITA PR",
+                "navbar" : "ITA PR"
+            }
+        },
+        "initial_plugin": "App14",
+        "ext_base_url": "https://admin-enspirea.briode.com",
+        "int_base_url": "https://admin-enspirea.briode.com",
+        "post_script" : "projects/postsetup_enspirea.sh"
+    },
+    "projectparams": {}
+}

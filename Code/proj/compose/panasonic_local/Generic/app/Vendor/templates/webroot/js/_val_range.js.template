@@ -1,0 +1,16 @@
+    // validation for __VAL_RANGE_CLASS__
+    var thLowerThan__VAL_RANGE_CLASS__  = null || __VAL_RANGE_LOWERTHAN__;
+    var thLowerThanIncludeEqual__VAL_RANGE_CLASS__ = false || __VAL_RANGE_COND_LOWERTHAN__;
+    var thHigherThan__VAL_RANGE_CLASS__ = null || __VAL_RANGE_HIGHERTHAN__;
+    var thHigherThanIncludeEqual__VAL_RANGE_CLASS__ = false || __VAL_RANGE_COND_HIGHERTHAN__;
+
+    $('.__VAL_RANGE_CLASS__').change(function(){
+        var bgcolor = getBGColorForRange(thLowerThan__VAL_RANGE_CLASS__, 
+                                      thLowerThanIncludeEqual__VAL_RANGE_CLASS__,
+                                      thHigherThan__VAL_RANGE_CLASS__, 
+                                      thHigherThanIncludeEqual__VAL_RANGE_CLASS__,
+                                      $(this));
+        $(this).css("background", bgcolor);
+    }).change();
+
+

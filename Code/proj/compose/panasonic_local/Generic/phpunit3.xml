@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit>
+  <formatter type="clover" usefile="false"/>
+  <filter>
+    <blacklist>
+      <directory suffix=".php">lib</directory>
+      <directory suffix=".php">app/Plugin/App3</directory>
+      <directory suffix=".php">Vendor</directory>
+    </blacklist> 
+  </filter>
+</phpunit>

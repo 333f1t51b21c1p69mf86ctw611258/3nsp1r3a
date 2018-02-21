@@ -1,0 +1,170 @@
+<?php
+App::uses('__PLUGINNAME__Controller', '__PLUGINNAME__.Controller');
+
+class __PLUGINNAME__ControllerTest extends ControllerTestCase {
+    public $fixtures = array(
+        'plugin.__PLUGINNAMELOWER__.__DBMODELLOWER__',
+        'plugin.__PLUGINNAMELOWER__.__WORKFLOWMODELLOWER__',
+        'plugin.__PLUGINNAMELOWER__.__WORKFLOWVIEWMODELLOWER__',
+        'app.briodesession',
+        'app.workflow_event_log',
+        'app.user',
+        'app.aco',
+        'app.aro',
+        'app.aro_aco',
+    );
+    public $autoFixtures = true;
+    public $pluginName = '__PLUGINNAME__';
+
+    public function prepare_auth($username, $userid, $attr_sequence){
+        $this->Controller = $this->generate('__PLUGINNAME__.__PLUGINNAME__', array(
+                                                'components' => array(
+                                                    'Auth' => array('user')
+        )));
+        $attr_map = array( 'username' => $username, 'id'=> $userid );
+        $inc = 0;
+        foreach( $attr_sequence as $attr ){
+            $this->Controller->Auth->staticExpects($this->at($inc++))->
+                                     method('user')->
+                                     with($attr)->
+                                     will($this->returnValue($attr_map[$attr]));
+        }
+    }
+
+
+    ////////////////////////////////////////
+    //   TEST CASES
+    ////////////////////////////////////////
+
+    //// CRUD + save
+    public function testCreate(){
+    }
+    public function testUploadSingleData(){
+    }
+    public function testCreateCheck(){
+    }
+    public function testRead(){
+    }
+    public function testUpdate(){
+    }
+    public function testDelete(){
+    }
+    public function testSave(){
+    }
+
+    //// Back button
+    public function testBack(){
+    }
+
+    public function testPaypalAck(){
+    }
+    public function testExport(){
+    }
+    public function testSaveUpdate(){
+    }
+    public function testIndex(){
+    }
+
+    //// Main view
+/*
+    public function testMainMenu(){
+        //$this->prepare_auth('test1', 1);
+        $actionName = 'main_menu';
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+        //$this->assertRegExp('/<html/', $this->contents);
+        //$this->assertRegExp('/<form/', $this->view);
+    }
+*/
+    public function testAdministration(){
+    }
+    public function testReportPortal(){
+    }
+    public function testListOpen() {
+        $this->prepare_auth('test1', 1,
+                        array(  'id',
+                                'username',
+                                'username',
+                                'id',
+                                'username'));
+        $actionName = 'list_waiting_for_your_action';
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+    }
+    public function testListInprogress() {
+        $auth_array = array('id',
+                            'username',
+                            'username',
+                            'id',
+                            'id',
+                            'username',
+                            'username',
+                            'id',
+                            'username');
+        if( strcmp($this->pluginName, 'App2')==0 ){  // Panasonic
+           array_push( $auth_array, 'id', 'username', 'username', 'username', 'username', 'id' );
+        }else{
+            array_push( $auth_array, 'username', 'username', 'username' );
+        }
+        $this->prepare_auth('test1', 1, $auth_array);
+        $actionName = 'list_being_reviewed';
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+    }
+    public function testListClosed() {
+        $this->prepare_auth('test1', 1,
+                        array(  'id',
+                                'username',
+                                'username',
+                                'id'));
+        $actionName = 'list_closed';
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+    }
+    public function testListAll() {
+        $this->prepare_auth('test1', 1,
+                        array(  'id',
+                                'username',
+                                'username', 
+                                'id',
+                                'username'));
+        $actionName = 'list_all';
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+    }
+
+    //// approval
+    public function testNext(){
+    }
+    public function testPrev(){
+    }
+    public function testApprove(){
+    }
+    public function testCancel(){
+    }
+}

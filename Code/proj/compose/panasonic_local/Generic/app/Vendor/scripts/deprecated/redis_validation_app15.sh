@@ -1,0 +1,6 @@
+#App15: class
+redis-cli hset App15_validate_cssclass_valTenToTwelve kind between
+redis-cli hset App15_validate_cssclass_valTenToTwelve high_kind lower_or_equal
+redis-cli hset App15_validate_cssclass_valTenToTwelve high_value 12.0
+redis-cli hset App15_validate_cssclass_valTenToTwelve low_kind higher_or_equal
+redis-cli hset App15_validate_cssclass_valTenToTwelve low_value 10.0

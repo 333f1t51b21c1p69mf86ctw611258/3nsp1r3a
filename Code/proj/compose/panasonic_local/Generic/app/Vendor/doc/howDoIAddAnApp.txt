@@ -1,0 +1,13 @@
+Add following files:
+ Vendor/scripts/redis_appXX.sh
+ Vendor/projects/webroot/js/AppXX
+ Vendor/projects/ExcelFormat/AppXX.xlsx
+
+Add new apps in folloging files:
+ Vendor/scripts/import_redis.sh
+ Vendor/scripts/acl.sh
+
+Add configuration if needed
+ Vendor/scripts/redis_global.sh
+ Vendor/scripts/addValidation.sh
+

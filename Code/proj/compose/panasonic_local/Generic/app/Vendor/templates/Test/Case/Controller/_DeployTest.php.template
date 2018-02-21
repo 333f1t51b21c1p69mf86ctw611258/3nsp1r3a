@@ -1,0 +1,100 @@
+<?php
+App::uses('__PLUGINNAME__Controller', '__PLUGINNAME__.Controller');
+
+class DeployTest extends ControllerTestCase {
+    public $fixtures = array(
+        'plugin.__PLUGINNAMELOWER__.__DBMODELLOWER__',
+        'app.user',
+        'app.aco',
+        'app.aro',
+        'app.aro_aco',
+    );
+    public $autoFixtures = true;
+
+    public function prepare_auth($username, $userid, $attr_sequence){
+        $this->Controller = $this->generate('__PLUGINNAME__.__PLUGINNAME__', array(
+                                                'components' => array(
+                                                    'Auth' => array('user')
+        )));
+        $attr_map = array( 'username' => $username, 'id'=> $userid );
+        $inc = 0;
+        foreach( $attr_sequence as $attr ){
+            $this->Controller->Auth->staticExpects($this->at($inc++))->
+                                     method('user')->
+                                     with($attr)->
+                                     will($this->returnValue($attr_map[$attr]));
+        }
+    }
+
+    private function prepareUploadFile(){
+        // set a fixed file location of the server
+        $layoutFullPath =  APP . DS . 'Plugin/__PLUGINNAME__/uploads'. DS . 'upload.xls';
+        $GLOBALS['_FILES']['file']['name'][0] = $layoutFullPath;
+        $layoutRandomFilename = APP . DS . 'Plugin/__PLUGINNAME__/Test/Case/Controller/__PLUGINNAME__.xlsx';
+        $GLOBALS['_FILES']['file']['tmp_name'][0] = $layoutRandomFilename;
+        if(!copy($layoutRandomFilename, $layoutFullPath)){
+            echo "failed to copy layout format\n";
+        }
+
+        $formulaRandomFilename = APP . DS . 'Plugin/__PLUGINNAME__/Test/Case/Controller/__PLUGINNAME__Formula.xlsx';
+        if(file_exists($formulaRandomFilename)){
+            $formulaFullPath =  APP . DS . 'Plugin/__PLUGINNAME__/uploads'. DS . 'formula.xls';
+            $GLOBALS['_FILES']['xlfile']['name'][0] = $formulaFullPath;
+            $GLOBALS['_FILES']['xlfile']['tmp_name'][0] = $formulaRandomFilename;
+            if(!copy($formulaRandomFilename, $formulaFullPath)){
+                echo "failed to copy formula excel file\n";
+            }
+        }
+        $GLOBALS['_POST']['submit']='Upload';
+    }
+
+    ////////////////////////////////////////
+    //   TEST CASES
+    ////////////////////////////////////////
+    //// format upload
+    public function testUploadLayout(){
+        $this->prepareUploadFile();
+        $this->preview();
+        $this->preview_layout();
+        //$this->upload_confirmation();
+    }
+    public function preview(){
+        $this->prepare_auth('test1', 1,
+                            array('id',));
+        $actionName = 'preview'; 
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+    }
+    public function preview_layout(){
+        $this->prepare_auth('test1', 1,
+                            array('id',));
+        $actionName = 'preview_layout'; 
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+    }
+    public function upload_confirmation(){
+        $actionName = 'upload_confirmation'; 
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+    }
+    public function testCancelPreview(){
+    }
+    public function testReeditLayout(){
+    }
+
+}

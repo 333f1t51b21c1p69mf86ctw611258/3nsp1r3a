@@ -1,0 +1,19 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App36" : {
+                "list" : "Form",
+                "navbar" : "Form"
+            },
+            "App37" : {
+                "list" : "Form Approval",
+                "navbar" : "Form Approval"
+            }
+        },
+        "initial_plugin": "App36",
+        "ext_base_url": "https://cci.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

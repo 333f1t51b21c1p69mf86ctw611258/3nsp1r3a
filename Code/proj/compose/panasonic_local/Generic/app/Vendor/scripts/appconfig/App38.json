@@ -1,0 +1,100 @@
+{
+    "appbase": {
+        "plugin_name": "App38",
+        "app_kind": "db",
+        "string_size": "256",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "1_INV_1",
+            "1_Port_of_Loading_1",
+            "1_MBL_1",
+            "1_HBL_1"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "1_INV_1",
+            "1_Port_of_Loading_1",
+            "1_MBL_1",
+            "1_HBL_1"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "enable",
+        "notification_email": "enspirea.dev@gmail.com",
+        "notification_url": {
+            "external_baseurl": "https://kwe.briode.com/Generic"
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "create",
+                "read",
+                "update"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op" : [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "118",
+            "119",
+            "120"
+        ],
+        "admin" : [
+            "1",
+            "121"
+        ]
+    },
+    "groups": [
+        {
+            "id": "1",
+            "name": "Demo",
+            "manager": [
+                "121"
+            ],
+            "users": [
+                "118",
+                "119",
+                "120"
+            ]
+        }
+    ]
+}

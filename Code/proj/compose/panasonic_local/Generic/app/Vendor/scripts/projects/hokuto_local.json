@@ -1,0 +1,39 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App46" : {
+                "list" : "Worktime Report",
+                "navbar" : "Worktime"
+            },
+            "App47" : {
+                "list" : "Budget Approval Report",
+                "navbar" : "Budget"
+            },
+            "App48" : {
+                "list" : "Budget Approval Additional Report",
+                "navbar" : "Budget (Additional)"
+            },
+            "App49" : {
+                "list" : "Work ID Editor",
+                "navbar" : "Works"
+            },
+            "App50" : {
+                "list" : "Drawing No Editor",
+                "navbar" : "Drawings"
+            },
+            "App51" : {
+                "list" : "Budget Category Editor",
+                "navbar" : "Budget Categories"
+            },
+            "App52" : {
+                "list" : "Project Editor",
+                "navbar" : "Projects"
+            }
+        },
+        "initial_plugin": "App46",
+        "ext_base_url": "https://hokuto_local.briode.com",
+        "int_base_url": "https://hokuto_local.briode.com",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

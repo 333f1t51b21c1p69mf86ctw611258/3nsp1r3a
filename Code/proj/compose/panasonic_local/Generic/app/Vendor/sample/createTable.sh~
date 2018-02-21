@@ -1,0 +1,6 @@
+#! /bin/sh
+
+python ./convXlsSchemaToSql.py . gp > _gp.sql
+
+/opt/lampp/bin/mysql -u root meijireport < _gp.sql
+

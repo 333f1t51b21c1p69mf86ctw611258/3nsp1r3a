@@ -1,0 +1,233 @@
+{
+    "globals": {
+        "enums": {
+            "Workflow_state": {
+                "0": "open",
+                "1": "in progress",
+                "2": "closed"
+            }
+        },
+        "lists": {
+            "Response_list": [
+                "QPR",
+                "QIR",
+                "FQR",
+                "FTR",
+                "Other"
+            ],
+            "Term_list": [
+                "Short Term C/M",
+                "Long Term C/M",
+                "Long Term C/M Plan"
+            ],
+            "Yes_no": [
+                "Yes",
+                "No"
+            ],
+            "Yes_na": [
+                "Yes",
+                "N/A"
+            ],
+            "check1": [
+                "c_opt1",
+                "c_opt2",
+                "c_opt3"
+            ],
+            "radio1": [
+                "r_opt1",
+                "r_opt2",
+                "r_opt3"
+            ],
+            "Suspected": [
+                "Suspected"
+            ],
+            "A_B_C_D": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "S_I_C": [
+                "Supplier",
+                "Internal",
+                "Customer"
+            ],
+            "Judgment_select": [
+                "Request Approved",
+                "As Is",
+                "Request Approved",
+                "Under the Following Conditions",
+                "Request Rejected",
+                "For the Following Reason(s)"
+            ],
+            "To_Pass_Parts_select": [
+                "Required: Account for Serial #",
+                "Not required: Account for Serial #"
+            ],
+            "NON_CONFORMITY_RANK_select": [
+                "Safety Critical Dimension and Process",
+                "Vital Characteristic Dimension and Process",
+                "Critical defect can not be detected and affects function",
+                "Critical Defect can be detected and affects function",
+                "Defect is non-functional"
+            ],
+            "Ringi_category": [
+                "Contract",
+                "Investment",
+                "external organization",
+                "events",
+                "disposal",
+                "Price",
+                "Hiring and others",
+                "Tangible fixed assets",
+                "Intangible fixed assets"
+            ],
+            "OK_NG": [
+                "OK",
+                "NG"
+            ],
+            "Safety": [
+                "Safety Critical Dimension and Process"
+            ],
+            "Vital": [
+                "Vital Characteristic Dimension and Process"
+            ],
+            "Critical1": [
+                "Critical defect can not be detected and affects"
+            ],
+            "Critical2": [
+                "Critical Defect can be detected and affects function"
+            ],
+            "Defect": [
+                "Defect is non-functional"
+            ],
+            "EnsExpenseCat": [
+                "",
+                "Automobile Expense",
+                "Computer and Internet Expenses",
+                "Meals and Entertainment",
+                "Office Supplies",
+                "Postage and Delivery",
+                "Rent Expense",
+                "Travel Expense"
+            ],
+            "Branch_list": [
+                "AL",
+                "ATL",
+                "CHG",
+                "HO",
+                "HTN",
+                "LA",
+                "LEX",
+                "RD",
+                "SD",
+                "TN"
+            ],
+            "AMEX_Personal_list": [
+                "AMEX",
+                "Personal"
+            ],
+            "Acount_AB": [
+                "",
+                "84831",
+                "84832",
+                "85190",
+                "85200",
+                "85240",
+                "85510",
+                "85410",
+                "85110",
+                "85111",
+                "85150",
+                "85210",
+                "85220",
+                "85270",
+                "85500",
+                "85250",
+                "85490",
+                "85420",
+                "85520",
+                "85360",
+                "84800"
+            ],
+            "Acount_C": [
+                "",
+                "85140",
+                "85142",
+                "85141"
+            ],
+            "Acount_DE": [
+                "",
+                "14512",
+                "14513",
+                "14514",
+                "82284"
+            ],
+            "Customer_name": [
+                "Yusen Logistics",
+                "NADC",
+                "Meiji",
+                "Noritake",
+                "Mazak",
+                "Ohio Metal",
+                "Senko"
+            ],
+            "Contact_name": [
+                "Osamu Ohta",
+                "Shin Kishioka",
+                "Toru Hironaka",
+                "Enokida"
+            ],
+            "YES_NO": [
+                "YES",
+                "NO"
+            ],
+            "Status": [
+                "Quoted",
+                "PO",
+                "Invoiced",
+                "Paid",
+                "Cancelled",
+                "Pending"
+            ],
+            "3D_printer": [
+                "Scoovo",
+                "Replicator",
+                "3D Touch",
+                "Davinci"
+            ],
+            "Matsutani_Expense_Category": [
+                "",
+                "Airfare/Rail",
+                "Car Rental",
+                "Rental Car Gas",
+                "Taxi/Bus/Limo",
+                "Parking/Tolls",
+                "Breakfast**",
+                "Lunch**",
+                "Dinner**",
+                "Entertainment**",
+                "Lodging/Room",
+                "Office Phone/Fax",
+                "Internet",
+                "Cell Phone",
+                "Postage/Shipping",
+                "Office Supplies*",
+                "Product Samples*",
+                "Tradeshow/Conference",
+                "Miscellaneous*"
+            ],
+            "SalesStatusCategory": [
+                "In Process",
+                "Approved",
+                "Rejected",
+                "Revised Win-Win",
+                "Ordered",
+                "Project on hold",
+                "Competitor Received PO",
+                "Customer Deciding",
+                "Project Cancelled"
+            ]
+        }
+    }
+}

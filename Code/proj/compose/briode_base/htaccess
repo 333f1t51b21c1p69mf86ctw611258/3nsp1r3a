@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+
+   RewriteRule    ^(.*)$ https://__PROJNAME__.briode.com/Generic/users/login [L]
+</IfModule>

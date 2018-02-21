@@ -1,0 +1,12 @@
+<?php
+/**
+ * __DBMODELINFIXTURE__Fixture
+ *
+ */
+class __DBMODELINFIXTURE__Fixture extends CakeTestFixture {
+    public $import = '__PLUGINNAME__.__DBMODEL__';
+/*
+    public $table = 'attr3s';
+    public $import = array('connection'=>'app3', 'table'=>'attr3s');
+*/
+}

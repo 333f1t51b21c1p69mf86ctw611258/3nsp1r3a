@@ -1,0 +1,19 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "dummy1" : {
+                "list" : "dummy1",
+                "navbar" : "dummy2"
+            },
+            "dummy2" : {
+                "list" : "dummy1",
+                "navbar" : "dummy2"
+            }
+        },
+        "initial_plugin": "val1",
+        "ext_base_url": "val2",
+        "int_base_url": "val3",
+        "post_script" : "val4"
+    },
+    "projectparams": {}
+}

@@ -1,0 +1,19 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App22" : {
+                "list" : "Maintenance",
+                "navbar" : "Maintenance"
+            },
+            "App23" : {
+                "list" : "Know-how",
+                "navbar" : "Know-how"
+            }
+        },
+        "initial_plugin": "App22",
+        "ext_base_url": "https://tokyomaker.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

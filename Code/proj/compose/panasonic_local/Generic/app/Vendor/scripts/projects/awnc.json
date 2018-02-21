@@ -1,0 +1,51 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App3" : {
+                "list" : "Customer Countermeasure",
+                "navbar" : "Customer Countermeasure"
+            },
+            "App7" : {
+                "list" : "Internal Countermeasure",
+                "navbar" : "Internal Countermeasure"
+            },
+            "App4" : {
+                "list" : "Daily Audit",
+                "navbar" : "Daily Audit"
+            },
+            "App11" : {
+                "list" : "Daily Audit(2)",
+                "navbar" : "Daily Audit(2)"
+            },
+            "App8" : {
+                "list" : "Deviation",
+                "navbar" : "Deviation"
+            },
+            "App5" : {
+                "list" : "Ringi",
+                "navbar" : "Ringi"
+            },
+            "App6" : {
+                "list" : "Inventory",
+                "navbar" : "Inventory"
+            },
+            "App10" : {
+                "list" : "Inventory Check",
+                "navbar" : "Inventory Check"
+            },
+            "App12" : {
+                "list" : "Test(App12)",
+                "navbar" : "None"
+            },
+            "App13" : {
+                "list" : "Test(App13)",
+                "navbar" : "None"
+            }
+        },
+        "initial_plugin": "App3",
+        "ext_base_url": "https://awnc.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

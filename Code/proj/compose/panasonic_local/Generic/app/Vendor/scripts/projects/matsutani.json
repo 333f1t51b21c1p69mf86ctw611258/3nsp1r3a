@@ -1,0 +1,15 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App34" : {
+                "list" : "Expense Fixed Categories",
+                "navbar" : "Expense Fixed Categories"
+            }
+        },
+        "initial_plugin": "App34",
+        "ext_base_url": "https://matsutani.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

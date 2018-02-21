@@ -1,0 +1,83 @@
+{
+    "appbase": {
+        "plugin_name": "App10",
+        "app_kind": "db",
+        "string_size": "256",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "Name",
+            "Branch",
+            "Year",
+            "Month",
+            "Date_Reported"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "Name",
+            "Branch",
+            "Year",
+            "Month",
+            "Date_Reported"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "acl",
+        "sw_report": "enable",
+        "sw_report_url": "",
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op" : [
+                "all"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
+        ],
+        "admin" : [
+            "1"
+        ]
+    }
+}

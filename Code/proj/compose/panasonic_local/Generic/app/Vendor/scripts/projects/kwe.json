@@ -1,0 +1,15 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App38" : {
+                "list" : "Trace Sheet",
+                "navbar" : "Trace Sheet"
+            }
+        },
+        "initial_plugin": "App38",
+        "ext_base_url": "https://kwe.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

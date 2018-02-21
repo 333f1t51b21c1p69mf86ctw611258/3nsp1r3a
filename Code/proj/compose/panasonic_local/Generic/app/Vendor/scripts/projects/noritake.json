@@ -1,0 +1,23 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App1" : {
+                "list" : "Monthly Report",
+                "navbar" : "Monthly Report"
+            },
+            "App9" : {
+                "list" : "Installation Experience",
+                "navbar" : "Installation Experience"
+            },
+            "App39" : {
+                "list" : "Marketing Report",
+                "navbar" : "Marketing Report"
+            }
+        },
+        "initial_plugin": "App1",
+        "ext_base_url": "https://admin-noritake.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

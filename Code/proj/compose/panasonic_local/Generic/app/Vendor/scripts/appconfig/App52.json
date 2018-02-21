@@ -1,0 +1,75 @@
+{
+    "appbase": {
+        "plugin_name": "App52",
+        "app_kind": "db",
+        "string_size": "32",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op"   : [
+                "create",
+                "read",
+                "update"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "layer_users": {
+        "user" : [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "admin" : [
+            "1"
+        ]
+    }
+}
+

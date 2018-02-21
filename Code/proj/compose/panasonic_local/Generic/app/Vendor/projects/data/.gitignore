@@ -1,0 +1,7 @@
+*.ldif
+*.rdp
+*.sql
+*.gz
+!gpdtl.sql
+!qtdtl.sql
+!sbdtl.sql

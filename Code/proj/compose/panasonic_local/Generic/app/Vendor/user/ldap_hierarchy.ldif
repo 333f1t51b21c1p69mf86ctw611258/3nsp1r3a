@@ -1,0 +1,9 @@
+dn: cn=Test,dc=example,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Barbara Jensen
+sn: Jensen
+title: the world's most famous mythical manager
+mail: bjensen@example.com
+uid: bjensen

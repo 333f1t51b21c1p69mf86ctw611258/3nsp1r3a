@@ -1,0 +1,9 @@
+dn: dc=enspirea,dc=com
+objectClass: dcObject
+objectClass: organization
+dc: enspirea
+o: Enspirea test
+
+dn: cn=Manager,dc=enspirea,dc=com
+objectClass: organizationalRole
+cn: Manager

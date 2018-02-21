@@ -1,0 +1,93 @@
+{
+    "appbase": {
+        "plugin_name": "App9",
+        "app_kind": "db",
+        "string_size": "256",
+        "main_page": "main_menu",
+        "mainview_columns": [
+            "id",
+            "creator_id",
+            "created_at",
+            "Company_Name",
+            "Product_Number",
+            "Project_Quantity"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "creator_id",
+            "created_at",
+            "Company_Name",
+            "Product_Number",
+            "Project_Quantity"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "readable_by_all",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op"   : [
+                "create",
+                "read",
+                "update"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        }
+    ],
+    "layer_users": {
+        "user" : [
+            "13",
+            "14",
+            "15",
+            "17",
+            "18",
+            "19",
+            "21",
+            "22",
+            "117",
+            "125"
+        ],
+        "admin" : [
+            "1",
+            "16",
+            "23"
+        ]
+    }
+}
+

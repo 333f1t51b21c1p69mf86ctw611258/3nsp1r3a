@@ -1,0 +1,19 @@
+{
+    "projectbase": {
+        "plugins" : {
+            "App33" : {
+                "list" : "Expense Free Categories",
+                "navbar" : "Expense Free Categories"
+            },
+            "App35" : {
+                "list" : "Categories",
+                "navbar" : "Categories"
+            }
+        },
+        "initial_plugin": "App33",
+        "ext_base_url": "https://matsutani.briode.com",
+        "int_base_url": "",
+        "post_script" : ""
+    },
+    "projectparams": {}
+}

@@ -1,0 +1,15 @@
+<?php
+class AllTest extends PHPUnit_Framework_TestSuite {
+
+    public static function suite() {
+
+        $path = APP . DS . 'Plugin'. DS . '__PLUGINNAME__'. DS. 'Test' . DS . 'Case' . DS;
+
+        $suite = new CakeTestSuite('All tests');
+        $suite->addTestDirectory($path . 'Controller' . DS);
+        return $suite;
+
+    }
+
+}
+

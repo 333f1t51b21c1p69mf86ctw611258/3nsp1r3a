@@ -1,0 +1,7 @@
+dn: ou=TestDept1,dc=enspirea,dc=com
+objectClass: organizationalUnit
+ou: TestDept1
+
+dn: ou=TestDept2,dc=enspirea,dc=com
+objectClass: organizationalUnit
+ou: TestDept2

@@ -1,0 +1,98 @@
+<?php
+App::uses('__PLUGINNAME__Controller', '__PLUGINNAME__.Controller');
+
+class __PLUGINNAME__ControllerTest extends ControllerTestCase {
+    public $fixtures = array(
+        'plugin.__PLUGINNAMELOWER__.__DBMODELLOWER__',
+        'app.briodesession',
+        'app.user',
+    );
+    public $autoFixtures = true;
+
+    public function prepare_auth($username, $usertype, $userid){
+        //FIXME usertype hardcoded
+        $this->Controller = $this->generate('__PLUGINNAME__.__PLUGINNAME__', array(
+                                                'components' => array(
+                                                    'Auth' => array('user')
+        )));
+        //for($i=0; $i<$repetition; $i++){
+            $this->Controller->Auth->staticExpects($this->at(0))->
+                                     method('user')->
+                                     with('id')->
+                                     will($this->returnValue($userid));
+            $this->Controller->Auth->staticExpects($this->at(1))->
+                                     method('user')->
+                                     with('username')->
+                                     will($this->returnValue($username));
+            $this->Controller->Auth->staticExpects($this->at(2))->
+                                     method('user')->
+                                     with('username')->
+                                     will($this->returnValue($username));
+            $this->Controller->Auth->staticExpects($this->at(3))->
+                                     method('user')->
+                                     with('usertype')->
+                                     will($this->returnValue($usertype));
+            /*
+            $this->Controller->Auth->staticExpects($this->at(4))->
+                                     method('user')->
+                                     with('id')->
+                                     will($this->returnValue($userid));
+            */
+        //} 
+
+    }
+
+    public function testUploadLayout(){
+    }
+    public function testCancelPreview(){
+    }
+    public function testPreview(){
+    }
+    public function testReeditLayout(){
+    }
+    public function testPreviewLayout(){
+    }
+    public function testUploadConfirmation(){
+    }
+    public function testCreate(){
+    }
+    public function testUploadSingleData(){
+    }
+    public function testCreateCheck(){
+    }
+    public function testDelete(){
+    }
+    public function testRead(){
+    }
+    public function testUpdate(){
+    }
+    public function testSave(){
+    }
+    public function testBack(){
+    }
+    public function testPaypalAck(){
+    }
+    public function testExport(){
+    }
+    public function testSaveUpdate(){
+    }
+    public function testIndex(){
+    }
+    public function testMainMenu(){
+        $this->prepare_auth('test1', 1, 1);
+        $actionName = 'main_menu';
+        $data = NULL;
+        $result = $this->testAction('/__PLUGINNAME__/'.$actionName,
+            array(
+                'method' => 'POST',
+                'return' => 'contents',
+                'data' => $data,
+        ));
+        //$this->assertRegExp('/<html/', $this->contents);
+        //$this->assertRegExp('/<form/', $this->view);
+    }
+    public function testAdministration(){
+    }
+    public function testReportPortal(){
+    }
+}

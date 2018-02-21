@@ -1,0 +1,207 @@
+{
+    "appbase": {
+        "plugin_name": "App33",
+        "app_kind": "workflow",
+        "string_size": "256",
+        "main_page": "list_waiting_for_your_action",
+        "mainview_columns": [
+            "subject_id",
+            "created_at",
+            "creator_id",
+            "summary",
+            "assignee"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "created_at",
+            "creator_id",
+            "Employee_Name",
+            "Employee_Number",
+            "Reason_For_Expenditures"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "acl",
+        "sw_report": "disable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+            "Report_Period_Start",
+            "Report_Period_End",
+            "1_Expenses_date_2",
+            "1_Expenses_date_3",
+            "1_Expenses_date_4",
+            "1_Expenses_date_5",
+            "1_Expenses_date_6",
+            "1_Expenses_date_7",
+            "1_Item1_1",
+            "1_Item1_2",
+            "1_Item1_3",
+            "1_Item1_4",
+            "1_Item1_5",
+            "1_Item1_6",
+            "1_Item1_7",
+            "2_Item1_total",
+            "2_Item2_total",
+            "2_Item3_total",
+            "2_Item4_total",
+            "2_Item5_total",
+            "2_Item6_total",
+            "2_Item7_total",
+            "2_Item8_total",
+            "2_Item9_total",
+            "2_Item10_total",
+            "2_Item11_total",
+            "2_Item12_total",
+            "2_Item13_total",
+            "2_Item14_total",
+            "2_Item15_total",
+            "2_Item16_total",
+            "2_Item17_total",
+            "2_Item18_total",
+            "2_Item19_total",
+            "3_Sun_total",
+            "3_Mon_total",
+            "3_Tue_total",
+            "3_Wed_total",
+            "3_Thu_total",
+            "3_Fri_total",
+            "3_Sat_total",
+            "4_Total",
+            "1_Item2_Code_1",
+            "1_Item3_Code_1",
+            "1_Item4_Code_1",
+            "1_Item5_Code_1",
+            "1_Item6_Code_1",
+            "1_Item7_Code_1",
+            "1_Item8_Code_1",
+            "1_Item9_Code_1",
+            "1_Item10_Code_1",
+            "1_Item11_Code_1",
+            "1_Item12_Code_1",
+            "1_Item13_Code_1",
+            "1_Item14_Code_1",
+            "1_Item15_Code_1",
+            "1_Item16_Code_1",
+            "1_Item17_Code_1",
+            "1_Item18_Code_1",
+            "1_Item19_Code_1",
+            "1_Mileage_date_1",
+            "1_Mileage_date_2",
+            "1_Mileage_date_3",
+            "1_Mileage_date_4",
+            "1_Mileage_date_5",
+            "1_Mileage_date_6",
+            "1_Mileage_date_7",
+            "7_Mileage_Amount_1",
+            "7_Mileage_Amount_2",
+            "7_Mileage_Amount_3",
+            "7_Mileage_Amount_4",
+            "7_Mileage_Amount_5",
+            "7_Mileage_Amount_6",
+            "7_Mileage_Amount_7",
+            "Total_Expenses",
+            "Due_to_Company",
+            "Due_to_Employee"
+        ],
+        "flag_import_to_ignored_fields": "true",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+        }
+    },
+    "workflowappbase": {
+        "assignee_at_approve": "",
+        "report_params": {},
+        "sw_email": "enable",
+        "sw_excel_imp_exp": "enable",
+        "forward_url": {
+            "external_baseurl": "https://matutani.briode.com/Generic"
+        },
+        "email_params": {},
+        "notifier_at_approve": {
+            "emails": []
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "create",
+                "read",
+                "update"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "manager",
+            "op" : [
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        {
+            "parent" : "manager",
+            "name" : "approver",
+            "op" : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "approver",
+            "name" : "admin",
+            "op" : [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        },
+        {
+            "name" : "approve",
+            "op" : "delete"
+        },
+        {
+            "name" : "cancel",
+            "op" : "delete"
+        },
+        {
+            "name" : "update",
+            "op" : "update"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "118",
+            "119",
+            "120"
+        ],
+        "manager" : [
+            "122"
+        ],
+        "admin" : [
+            "1",
+            "121"
+        ]
+    }
+}

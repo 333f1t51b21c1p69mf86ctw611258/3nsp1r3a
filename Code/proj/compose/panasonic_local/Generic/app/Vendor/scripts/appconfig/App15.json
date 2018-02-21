@@ -1,0 +1,137 @@
+{
+    "appbase": {
+        "plugin_name": "App15",
+        "app_kind": "workflow",
+        "string_size": "256",
+        "main_page": "list_waiting_for_your_action",
+        "mainview_columns": [
+            "subject_id",
+            "created_at",
+            "creator_id",
+            "summary",
+            "assignee",
+            "mandatory_flag",
+            "validation_flag"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "creator_id",
+            "created_at",
+            "Datecell",
+            "Stringcell",
+            "Integercell"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "acl",
+        "sw_report": "enable",
+        "sw_report_url": {
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+            "TenToTwelve": {
+                "kind": "between",
+                "high_kind": "lower_or_equal",
+                "high_value": "12.0",
+                "low_kind": "higher_or_equal",
+                "low_value": "10.0"
+            }
+        }
+    },
+    "workflowappbase": {
+        "assignee_at_approve": "",
+        "report_params": {},
+        "sw_email": "disable",
+        "sw_excel_imp_exp": "enable",
+        "forward_url": "",
+        "email_params": {},
+        "notifier_at_approve": {
+            "emails": []
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "create",
+                "read"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "manager",
+            "op" : [
+                "create",
+                "read",
+                "update"
+            ]
+        },
+        {
+            "parent" : "manager",
+            "name" : "approver",
+            "op" : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "approver",
+            "name" : "admin",
+            "op" : [
+                "all"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        },
+        {
+            "name" : "approve",
+            "op" : "delete"
+        },
+        {
+            "name" : "cancer",
+            "op" : "delete"
+        },
+        {
+            "name" : "update",
+            "op" : "update"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32"
+        ],
+        "manager" : [
+            "25"
+        ],
+        "admin" : [
+            "1",
+            "24"
+        ]
+    }
+}

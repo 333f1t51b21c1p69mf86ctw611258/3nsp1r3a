@@ -1,0 +1,137 @@
+{
+    "appbase": {
+        "plugin_name": "App21",
+        "app_kind": "workflow",
+        "string_size": "256",
+        "main_page": "list_all",
+        "mainview_columns": [
+            "subject_id",
+            "created_at",
+            "creator_id",
+            "summary",
+            "assignee",
+            "mandatory_flag",
+            "validation_flag"
+        ],
+        "mainview_sort_columns":[
+        ],
+        "mainview_sort_order":[
+        ],
+        "searchview_columns": [
+            "id",
+            "created_at",
+            "creator_id",
+            "Control_Number",
+            "A_Time_slot_1",
+            "A_Line_1",
+            "A_Appearance_1"
+        ],
+        "impexp_keys": [
+        ],
+        "sw_notification": "disable",
+        "notification_email": "",
+        "notification_url": {
+        },
+        "db_visibility": "acl",
+        "sw_report": "enable",
+        "sw_report_url": {
+            "url" : "https://www.briode.com/Generic/users/login"
+        },
+        "calculated_fields": [
+        ],
+        "flag_import_to_ignored_fields": "false",
+        "hidden_fields": [
+        ],
+        "validation_fields": {
+            "TrimHeight": {
+                "kind": "between",
+                "high_kind": "lower_or_equal",
+                "high_value": "11.05",
+                "low_kind": "higher_or_equal",
+                "low_value": "10.65"
+            },
+            "Height": {
+                "kind": "between",
+                "high_kind": "lower_or_equal",
+                "high_value": "4.55",
+                "low_kind": "higher_or_equal",
+                "low_value": "4.05"
+            },
+            "Runout": {
+                "kind": "lower_or_equal",
+                "value": "0.1"
+            },
+            "ID": {
+                "kind": "between",
+                "high_kind": "lower_or_equal",
+                "high_value": "57.6",
+                "low_kind": "higher_or_equal",
+                "low_value": "57.55"
+            },
+            "OD": {
+                "kind": "between",
+                "high_kind": "lower_or_equal",
+                "high_value": "141.9",
+                "low_kind": "higher_or_equal",
+                "low_value": "141.5"
+            },
+            "OverallHeight": {
+                "kind": "between",
+                "high_kind": "lower_or_equal",
+                "high_value": "5.30",
+                "low_kind": "higher_or_equal",
+                "low_value": "5.20"
+            }
+        }
+    },
+    "layers": [
+        {
+            "parent" : "/",
+            "name" : "user",
+            "op"   : [
+                "all"
+            ]
+        },
+        {
+            "parent" : "user",
+            "name" : "admin",
+            "op" : [
+                "all"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name" : "export",
+            "op" : "update"
+        },
+        {
+            "name" : "create",
+            "op" : "create"
+        },
+        {
+            "name" : "approve",
+            "op" : "delete"
+        },
+        {
+            "name" : "cancel",
+            "op" : "delete"
+        },
+        {
+            "name" : "update",
+            "op" : "update"
+        }
+    ],
+    "layer_users" : {
+        "user" : [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        "admin" : [
+            "1"
+        ]
+    }
+}
